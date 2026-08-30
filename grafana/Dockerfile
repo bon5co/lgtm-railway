@@ -16,6 +16,8 @@ ENV GF_SECURITY_ADMIN_USER=admin \
     GF_DEFAULT_INSTANCE_NAME="Grafana on Railway" \
     GF_ANALYTICS_REPORTING_ENABLED=false \
     GF_ANALYTICS_CHECK_FOR_UPDATES=false \
-    GF_PATHS_DATA=/var/lib/grafana
+    GF_PATHS_DATA=/var/lib/grafana \
+    LOKI_URL=http://loki.railway.internal:3100 \
+    PROMETHEUS_URL=http://prometheus.railway.internal:9090
 
 ENTRYPOINT ["/usr/local/bin/railway-entrypoint.sh"]

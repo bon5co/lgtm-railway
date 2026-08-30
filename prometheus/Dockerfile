@@ -4,7 +4,7 @@ COPY railway-entrypoint.sh /etc/prometheus/railway-entrypoint.sh
 
 # Literals baked here rather than published as template variables, which
 # templateGenerate would turn into blank required fields on the deploy form.
-ENV PROMETHEUS_SCRAPE_TARGETS="" \
+ENV PROMETHEUS_SCRAPE_TARGETS="loki=loki.railway.internal:3100/metrics" \
     PROMETHEUS_SCRAPE_INTERVAL=15s \
     PROMETHEUS_RETENTION_TIME=31d \
     PROMETHEUS_RETENTION_SIZE=0
