@@ -7,9 +7,9 @@ Three images, all built by GitHub Actions and pushed to GHCR:
 
 | image | upstream | pinned |
 | --- | --- | --- |
-| `ghcr.io/bon5co/lgtm-railway-grafana` | `grafana/grafana-oss` | `13.0.2` |
-| `ghcr.io/bon5co/lgtm-railway-loki` | `grafana/loki` | `3.7.7` |
-| `ghcr.io/bon5co/lgtm-railway-prometheus` | `prom/prometheus` | `v3.14.0` |
+| `ghcr.io/bon5co/lgtm-railway-grafana` | `grafana/grafana` | `13.3.1` |
+| `ghcr.io/bon5co/lgtm-railway-loki` | `grafana/loki` | `3.7.10` |
+| `ghcr.io/bon5co/lgtm-railway-prometheus` | `prom/prometheus` | `v3.16.0` |
 
 ## Why these exist
 
@@ -39,7 +39,7 @@ GitHub source build, so each deploy spends the deployer's build minutes and can
 silently move Grafana's SQLite schema and Loki's index schema forward.
 
 **Grafana does not run as root.** Railway mounts volumes as uid 0 while
-`grafana-oss` runs as uid 472; rather than setting `RAILWAY_RUN_UID=0`, the
+`grafana/grafana` (the OSS edition, same as the retired `grafana-oss` tags) runs as uid 472; rather than setting `RAILWAY_RUN_UID=0`, the
 entrypoint repairs the mount as root and then drops privileges with `su-exec`.
 The same applies to Loki (uid 10001).
 

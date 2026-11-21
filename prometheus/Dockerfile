@@ -1,4 +1,4 @@
-FROM prom/prometheus:v3.14.0
+FROM prom/prometheus:v3.16.0
 
 COPY railway-entrypoint.sh /etc/prometheus/railway-entrypoint.sh
 
