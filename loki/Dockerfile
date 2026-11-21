@@ -1,6 +1,6 @@
-FROM grafana/loki:3.7.7
+FROM grafana/loki:3.7.10
 
-# grafana/loki:3.7.7 is distroless: the whole filesystem carries one binary at
+# grafana/loki:3.7.10 is distroless: the whole filesystem carries one binary at
 # /usr/bin/loki and no shell, so there is no entrypoint script and no su-exec
 # here. Railway mounts volumes owned by uid 0, and the upstream image runs as
 # uid 10001, so the container runs as root instead -- Loki then creates its own
